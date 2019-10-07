@@ -101,20 +101,77 @@
 // console.log(listItems);
 
 // GET ELEMENTS BY TAGNAME
-let lis = document.getElementsByTagName('li');
-console.log(lis);
+// let lis = document.getElementsByTagName('li');
+// console.log(lis);
 
-console.log(lis[4]);
-lis[0].style.color = 'red';
-lis[3].textContent = 'Test';
+// console.log(lis[4]);
+// lis[0].style.color = 'red';
+// lis[3].textContent = 'Test';
 
-// Convert HTML Collection into array
-lis = Array.from(lis);
+// // Convert HTML Collection into array
+// lis = Array.from(lis);
 
-lis.reverse(); // this alone will give you an error because html collection is not an arr
-console.log(lis);
+// lis.reverse(); // this alone will give you an error because html collection is not an arr
+// console.log(lis);
+
+// query selector all
+
+// const items = document.querySelectorAll('ul.collection li.collection-item');
+
+// items.forEach(function(item, index) {
+//     item.textContent = `$`
+// }
+// )
+
+// console.log(items);
 
 
+// TRAVERSING THE DOM
+
+let val;
+
+const list = document.querySelector('ul.collection');
+const listItem = document.querySelector('li.collection-item:first-child');
+
+
+// get child nodes
+val = list.childNodes;
+// val = list.childNodes[0];
+// val = list.childNodes[0].nodeName;
+val = list.childNodes[3].nodeType;
+
+// Node Types
+// 1 - element
+// 2 - attribute (deprecated))
+// 3 - Text node
+// 8 - comment
+// 9 - Document itself
+// 10 - Doctype
+
+// will use this more
+// get children element nodes
+val = list.children;
+val = list.children[0];
+
+// get nested children
+list.children[3].children;
+list.children[3].children[0].id = 'test-link';
+
+val = list.firstChild;
+val = list.firstElementChild;
+// same for last child
+
+// count child els
+val = list.childElementCount;
+
+// get parent node
+val = listItem.parentNode;
+val = listItem.parentElement;
+val = listItem.parentNode.parentElement;
+
+
+
+console.log(val);
 
 
 
