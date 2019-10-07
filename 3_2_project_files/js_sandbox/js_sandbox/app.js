@@ -128,54 +128,82 @@
 
 // TRAVERSING THE DOM
 
-let val;
+// let val;
 
-const list = document.querySelector('ul.collection');
-const listItem = document.querySelector('li.collection-item:first-child');
-
-
-// get child nodes
-val = list.childNodes;
-// val = list.childNodes[0];
-// val = list.childNodes[0].nodeName;
-val = list.childNodes[3].nodeType;
-
-// Node Types
-// 1 - element
-// 2 - attribute (deprecated))
-// 3 - Text node
-// 8 - comment
-// 9 - Document itself
-// 10 - Doctype
-
-// will use this more
-// get children element nodes
-val = list.children;
-val = list.children[0];
-
-// get nested children
-list.children[3].children;
-list.children[3].children[0].id = 'test-link';
-
-val = list.firstChild;
-val = list.firstElementChild;
-// same for last child
-
-// count child els
-val = list.childElementCount;
-
-// get parent node
-val = listItem.parentNode;
-val = listItem.parentElement;
-val = listItem.parentNode.parentElement;
+// const list = document.querySelector('ul.collection');
+// const listItem = document.querySelector('li.collection-item:first-child');
 
 
+// // get child nodes
+// val = list.childNodes;
+// // val = list.childNodes[0];
+// // val = list.childNodes[0].nodeName;
+// val = list.childNodes[3].nodeType;
 
-console.log(val);
+// // Node Types
+// // 1 - element
+// // 2 - attribute (deprecated))
+// // 3 - Text node
+// // 8 - comment
+// // 9 - Document itself
+// // 10 - Doctype
+
+// // will use this more
+// // get children element nodes
+// val = list.children;
+// val = list.children[0];
+
+// // get nested children
+// list.children[3].children;
+// list.children[3].children[0].id = 'test-link';
+
+// val = list.firstChild;
+// val = list.firstElementChild;
+// // same for last child
+
+// // count child els
+// val = list.childElementCount;
+
+// // get parent node
+// val = listItem.parentNode;
+// val = listItem.parentElement;
+// val = listItem.parentNode.parentElement;
 
 
 
+// console.log(val);
 
+
+// Creating DOM elements
+
+const li = document.createElement('li');
+
+// add class
+li.className = 'collection-item';
+
+// add id 
+li.id = 'new-item';
+
+// add attribute
+li.setAttribute('title', 'New Item');
+
+// create text node and append
+li.appendChild(document.createTextNode('Hello JS'));
+
+const redX = document.createElement('a');
+
+redX.className = 'delete-item secondary-content';
+// add icon html
+redX.innerHTML = '<i class="fa fa-remove"></i>';
+
+// append red x example
+li.append(redX);
+
+// append li as child to ul
+
+document.querySelector('ul.collection').appendChild(li);
+
+console.log(li);
 
 
 
