@@ -176,37 +176,88 @@
 
 // Creating DOM elements
 
-const li = document.createElement('li');
+// const li = document.createElement('li');
 
-// add class
-li.className = 'collection-item';
+// // add class
+// li.className = 'collection-item';
 
-// add id 
-li.id = 'new-item';
+// // add id 
+// li.id = 'new-item';
 
-// add attribute
-li.setAttribute('title', 'New Item');
+// // add attribute
+// li.setAttribute('title', 'New Item');
 
-// create text node and append
-li.appendChild(document.createTextNode('Hello JS'));
+// // create text node and append
+// li.appendChild(document.createTextNode('Hello JS'));
 
-const redX = document.createElement('a');
+// const redX = document.createElement('a');
 
-redX.className = 'delete-item secondary-content';
-// add icon html
-redX.innerHTML = '<i class="fa fa-remove"></i>';
+// redX.className = 'delete-item secondary-content';
+// // add icon html
+// redX.innerHTML = '<i class="fa fa-remove"></i>';
 
-// append red x example
-li.append(redX);
+// // append red x example
+// li.append(redX);
 
-// append li as child to ul
+// // append li as child to ul
 
-document.querySelector('ul.collection').appendChild(li);
+// document.querySelector('ul.collection').appendChild(li);
 
-console.log(li);
-
-
+// console.log(li);
 
 
+//  REPLACE ELEMENTS
 
+
+// create element 
+// const newHeading = document.createElement('h2');
+
+// // add id
+// newHeading.id = 'task-title';
+
+// // new text node 
+// newHeading.appendChild(document.createTextNode('Task List'));
+
+// // get the old heading
+// const oldHeading = document.getElementById('task-title');
+// // parent
+// const cardAction = document.querySelector('.card-acion');
+
+// // replace
+// cardAction.replaceChild(newHeading, oldHeading);
+
+// console.log(newHeading);
+
+//  events
+
+// document.querySelector('.clear-tasks').addEventListener('click',
+// function(){
+//     console.log('Hello World');
+    
+// });
+
+document.querySelector('.clear-tasks').addEventListener('click',
+onClick);
+
+
+function onClick(e){
+    // console.log("Clicked");
+    let val;
+    val = e;
+
+
+    val = e.target;
+    val = e.target.id; // doesn't have id so will be blank
+    val = e.target.className;
+    val = e.target.classList; // get them as a list with all the classes, classes are separated with space
+
+    // event type
+    val = e.type;
+
+    // timestamp
+    val = e.timeStamp;
+
+    console.log(val);
+    
+}
 
