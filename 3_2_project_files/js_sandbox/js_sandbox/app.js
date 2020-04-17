@@ -236,28 +236,44 @@
     
 // });
 
-document.querySelector('.clear-tasks').addEventListener('click',
-onClick);
+// document.querySelector('.clear-tasks').addEventListener('click',
+// onClick);
 
 
-function onClick(e){
-    // console.log("Clicked");
-    let val;
-    val = e;
+// function onClick(e){
+//     // console.log("Clicked");
+//     let val;
+//     val = e;
 
 
-    val = e.target;
-    val = e.target.id; // doesn't have id so will be blank
-    val = e.target.className;
-    val = e.target.classList; // get them as a list with all the classes, classes are separated with space
+//     val = e.target;
+//     val = e.target.id; // doesn't have id so will be blank
+//     val = e.target.className;
+//     val = e.target.classList; // get them as a list with all the classes, classes are separated with space
 
-    // event type
-    val = e.type;
+//     // event type
+//     val = e.type;
 
-    // timestamp
-    val = e.timeStamp;
+//     // timestamp
+//     val = e.timeStamp;
 
-    console.log(val);
+//     console.log(val);
     
-}
+// }
 
+
+//  Global Scope\
+var a = 1;
+let b = 2;
+const c = 3;
+
+function test() {
+    var a = 4;
+    let b =5;
+    const c =6;
+    console.log('Global Scope ', a, b, c);
+
+}
+test();
+
+console.log('Global Scope ', a, b, c);
